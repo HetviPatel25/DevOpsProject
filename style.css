@@ -55,7 +55,7 @@ form > div{
 }
 form label{
     flex-shrink: 0;
-    height: 50px;
+    height: 55px;
     width: 50px;
     background-color: var(--accent-color);
     fill: var(--base-color);
@@ -104,12 +104,17 @@ form button{
     font-weight: 600;
     text-transform: uppercase;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 form button:hover{
     background-color: var(--text-color);
 }
-form button:focus{
+form button:focus,
+form button:active{
     outline: none;
+    background-color: var(--text-color);
+}
+form button:active{
     background-color: var(--text-color);
 }
 a{
@@ -127,7 +132,14 @@ a:hover{
 }
 form div.incorrect label{
     background-color: #f06272;
+    border-color: #f06272;
 }
 form div.incorrect input{
     border-color: #f06272;
+}
+form div.incorrect input:focus {
+    border-color: #f06272;
+}
+#error-message{
+    color: #f06272;
 }
