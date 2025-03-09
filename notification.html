@@ -104,9 +104,9 @@ button{
 
             emailjs.send("service_95nptbn", "template_nr9lvbg", templateParams)
                 .then(response => {
-                    document.getElementById('status').innerText = 'Email sent successfully!';
+                    document.getElementById('status').innerText = 'notification sent successfully!';
                 }, error => {
-                    document.getElementById('status').innerText = 'Error sending email';
+                    document.getElementById('status').innerText = 'try again';
                     console.error('Error:', error);
                 });
         }
