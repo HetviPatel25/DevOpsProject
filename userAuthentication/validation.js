@@ -73,7 +73,7 @@ function getSignUpFormErrors(firstName, email, password, repeatPassword, phoneNu
 
     // Check if the password and repeat password match
     if (password !== repeatPassword) {
-        errors.push('Passowrd does not match repeated password')
+        errors.push('Password does not match repeated password')
         password_input.parentElement.classList.add('incorrect')
         repeat_password_input.parentElement.classList.add('incorrect')
 

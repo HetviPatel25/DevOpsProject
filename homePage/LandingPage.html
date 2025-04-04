@@ -6,59 +6,60 @@
     <title>Medical Landing Page</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-image: url('img/img2.avif');
+            font-family:  Poppins, 'Segoe UI', Geneva;
+            background-image: url('/DevOpsProject/homePage/images/img2.avif');
             background-size: cover;
             margin: 0;
             padding: 0;
-            color: #333;
+            color: #2E2B41;
         }
 
         header {
-            background-image: url('img/img3.avif');
+            background-color: white;
             background-size: cover;
-            color: white; 
+            color: #2E2B41; 
             text-align: center;
             padding: 40px;
+            text-transform: uppercase;
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 5em;
+            font-weight: 1000;
         }
 
         .container {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: 70vh;
             flex-direction: column;
         }
 
         .function-button {
-            background-color:  #1E88E5;
+            background-color:  #6e17f1e3;
             color: white;
-            padding: 20px 40px;
+            padding: .85em 40px;
             text-align: center;
-            margin: 10px;
+            margin: 30px;
             border: none;
-            border-radius: 5px;
-            font-size: 1.2em;
-            width: 250px;
+            border-radius: 15px;
+            font-size: 2.5em;
+            width: 500px;
             cursor: pointer;
             transition: background-color 0.3s;
         }
 
         .function-button:hover {
-            background-color: #45a049;
+            background-color: #2e282d;
         }
 
         footer {
             background-color: #333;
             color: white;
             text-align: center;
-            padding: 20px;
-            position: ;
+            padding: 23px;
             width: 100%;
             bottom: 0;
         }
@@ -73,10 +74,9 @@
 </header>
 
 <div class="container">
-    <button class="function-button" onclick="window.location.href='/appointments'">Book an Appointment</button>
-    <button class="function-button" onclick="window.location.href='/consultation'">Online Consultation</button>
-    <button class="function-button" onclick="window.location.href='/services'">Emergency Alert</button>
-    <button class="function-button" onclick="window.location.href='/contact'">Contact Us</button>
+    <button class="function-button" onclick="window.location.href='/DevOpsProject/bookAppointment/index.html'">Book an Appointment</button>
+    <button class="function-button" onclick="window.location.href='/DevOpsProject/emergencyAlert/notification.html'">Emergency Alert</button>
+    <button class="function-button" onclick="window.location.href='/DevOpsProject/contactPage/contactPage.html'">Contact Us</button>
 </div>
 
 <footer>
