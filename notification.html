@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Notification App</title>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <style>
+        @font-face {
+  font-family: "handwriting";
+  src:
+    url("fonts/journal-webfont.woff2") format("woff2"),
+    url("fonts/journal-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "typewriter";
+  src:
+    url("fonts/momot___-webfont.woff2") format("woff2"),
+    url("fonts/momot___-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font: 1.3rem sans-serif;
+  padding: 0.5em;
+  margin: 0;
+  background: #eae6e6;
+}
+
+form {
+  position: relative;
+  width: 740px;
+  height: 498px;
+  margin: 0 auto;
+  padding: 1em;
+  box-sizing: border-box;
+  background: #fff url(background.jpg);
+
+  /* we create our grid */
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 10em 1em 1em 1em;
+}
+
+        .container { max-width: 400px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px; }
+
+        input[type=text] {
+  background-color: #c0f1df;
+  color: white;
+}
+
+button{
+  background-color: #7bcfb0; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Send Email</h2>
+        <label for="email">Recipient Email:</label>
+        <input type="email" id="email" placeholder="Enter email" required>
+        <br><br>
+        <label for="message">Select Message:</label>
+        <select id="message">
+            <option value="Help, Am Having seizeure">Help, Am Having seizeure</option>
+            <option value="Faint Attack">Faint Attack</option>
+            <option value="I am can't feel my legs">I am can't feel my legs.</option>
+        </select>
+        <br><br>
+        <button onclick="sendEmail()">Send</button>
+        <p id="status"></p>
+    </div>
+
+    <script>
+        (function(){
+            emailjs.init("KeIg2pCjxrol_35ZI"); // Replace with your EmailJS Public Key
+        })();
+
+        function sendEmail() {
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (!email) {
+                document.getElementById('status').innerText = 'Please enter a valid email!';
+                return;
+            }
+
+            const templateParams = {
+                to_email: email,
+                message: message
+            };
+
+            emailjs.send("service_95nptbn", "template_nr9lvbg", templateParams)
+                .then(response => {
+                    document.getElementById('status').innerText = 'notification sent successfully!';
+                }, error => {
+                    document.getElementById('status').innerText = 'try again';
+                    console.error('Error:', error);
+                });
+        }
+    </script>
+</body>
+</html>
